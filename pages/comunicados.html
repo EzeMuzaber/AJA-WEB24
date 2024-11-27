@@ -37,7 +37,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
                         <ul class="dropdown-menu" aria-labelledby="contactDropdown">
                             <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
-                            <li><a class="dropdown-item" href="cargar_cv.html">Cargar CV</a></li>
+                            <li><a class="dropdown-item" href="cargaCV.html">Cargar CV</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -63,31 +63,32 @@
         </div> -->
 
         <!-- Lista de Comunicados -->
-        <div id="comunicadosContainer" class="row g-3">
-            <div class="col-md-4 comunicado">
-                <div class="card h-100">
+        <div id="comunicadosContainer" class="row g-4">
+            <!-- Tarjeta 1 -->
+            <div class="col-md-6">
+                <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Bienvenida: Laura García</h5>
                         <p class="card-text text-muted">Publicado el 20 de noviembre de 2024</p>
-                        <p class="card-text">Nos complace dar la bienvenida a Laura García al equipo de
-                            Administración...</p>
-                        <a href="incorporaciones.html#laura-garcia" class="btn btn-primary">Leer más</a>
+                        <p>Nos complace dar la bienvenida a Laura García al equipo de Administración. Estamos seguros de que será una gran incorporación.</p>
+                        <a href="incorporaciones.html#laura-garcia" class="btn btn-primary btn-sm">Leer más</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 comunicado">
-                <div class="card h-100">
+        
+            <!-- Tarjeta 2 -->
+            <div class="col-md-6">
+                <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Desvinculación: Pedro Martínez</h5>
                         <p class="card-text text-muted">Publicado el 15 de noviembre de 2024</p>
-                        <p class="card-text">Lamentamos informar la desvinculación de Pedro Martínez del sector de
-                            Logística...</p>
-                        <a href="desvinculaciones.html#pedro-martinez" class="btn btn-primary">Leer más</a>
+                        <p>Lamentamos informar la desvinculación de Pedro Martínez del sector de Logística. Le deseamos lo mejor en sus futuros proyectos.</p>
+                        <a href="desvinculaciones.html#pedro-martinez" class="btn btn-danger btn-sm">Leer más</a>
                     </div>
                 </div>
             </div>
         </div>
-
+        
     </main>
 
     <!-- Modal para Visor de PDF -->
@@ -105,8 +106,57 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>© 2024 Asociación Juvenil Araucana - Todos los derechos reservados</p>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <!-- Enlaces rápidos -->
+            <div class="row text-center">
+                <div class="col-md-6 mb-3">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-white text-decoration-none">Inicio</a></li>
+                        <li><a href="comunicados.html" class="text-white text-decoration-none">Comunicados</a></li>
+                        <li><a href="incorporaciones.html" class="text-white text-decoration-none">Incorporaciones</a></li>
+                        <li><a href="desvinculaciones.html" class="text-white text-decoration-none">Desvinculaciones</a></li>
+                        <li><a href="sectores.html" class="text-white text-decoration-none">Sectores</a></li>
+                        <li><a href="documentos.html" class="text-white text-decoration-none">Documentos</a></li>
+                        <li><a href="contacto.html" class="text-white text-decoration-none">Contacto</a></li>
+                        <li><a href="cargaCV.html" class="text-white text-decoration-none">Cargar CV</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Información de Contacto -->
+                <div class="col-md-6 mb-3">
+                    <h5>Contactos</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>RRHH:</strong> <a href="mailto:rrhh@aja.com" class="text-white text-decoration-none">rrhh@aja.com</a></li>
+                        <li><strong>WPP Ausencias:</strong> <a href="tel:111111111" class="text-white text-decoration-none">111111111</a></li>
+                        <li><strong>Teléfono Principal:</strong> <a href="tel:222222222" class="text-white text-decoration-none">11 3485-6587</a></li>
+                        <li><strong>Teléfono Proovedores:</strong> <a href="tel:222222222" class="text-white text-decoration-none">11 2496-8870</a></li>
+                        <li><strong>Teléfono Pedidos:</strong> <a href="tel:222222222" class="text-white text-decoration-none">11 3878-9419</a></li>
+
+                        <li><strong>Horario de Atención:</strong> Lunes a Viernes, 9:00 AM - 18:00 PM</li>
+                    </ul>
+                </div>
+    
+                <!-- Redes Sociales -->
+                <!-- <div class="col-md-4 mb-3">
+                    <h5>Síguenos</h5>
+                    <ul class="list-unstyled d-flex gap-3">
+                        <li><a href="https://www.facebook.com" target="_blank" class="text-white"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com" target="_blank" class="text-white"><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div> -->
+            </div>
+    
+            <!-- Línea Divisoria -->
+            <hr class="bg-light">
+    
+            <!-- Pie de Página -->
+            <div class="text-center">
+                <p>© 2024 Ezequiel Muzaber - Asociación Juvenil Araucana - Todos los derechos reservados</p>
+            </div>
+        </div>
     </footer>
 
     <!-- Scripts -->
@@ -120,21 +170,24 @@
             pdfViewer.innerHTML = ''; // Limpiar contenido previo
 
             const loadingTask = pdfjsLib.getDocument(pdfPath);
-            loadingTask.promise.then(pdf => {
-                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                    pdf.getPage(pageNum).then(page => {
-                        const viewport = page.getViewport({ scale: 1.5 });
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
+    loadingTask.promise.then(pdf => {
+        const isMobile = window.innerWidth <= 768; // Detectar dispositivos móviles
+        const scale = isMobile ? 1.0 : 1.5; // Escalado dinámico
 
-                        // Renderizar la página
-                        page.render({ canvasContext: context, viewport: viewport }).promise.then(() => {
-                            pdfViewer.appendChild(canvas);
-                        });
-                    });
-                }
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            pdf.getPage(pageNum).then(page => {
+                const viewport = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Renderizar la página
+                page.render({ canvasContext: context, viewport }).promise.then(() => {
+                    pdfViewer.appendChild(canvas);
+                });
+            });
+        }
             }).catch(error => {
                 console.error('Error al cargar el PDF:', error);
                 pdfViewer.innerHTML = `<p>No se pudo cargar el documento. <a href="${pdfPath}" target="_blank">Abrir en una nueva ventana</a></p>`;

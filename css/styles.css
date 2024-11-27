@@ -2,6 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    background-color: #f8f9fa;
 }
 
 h1, h2 {
@@ -25,6 +26,17 @@ footer {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Card Estilos */
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Tarjetas */
 .card-person {
     padding: 15px;
@@ -43,7 +55,7 @@ footer {
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeIn 1.5s ease forwards;
+    animation: fadeIn 1.5s ease-in forwards;
 }
 
 @keyframes fadeIn {
@@ -64,4 +76,77 @@ footer {
     padding: 20px;
     border-top: 2px dashed #ccc;
     margin-top: 20px;
+}
+
+/* Documentos */
+#destacado {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #007bff;
+}
+
+/* Últimos Archivos */
+#ultimos-documentos .card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#ultimos-documentos .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* FOOTER */
+footer {
+    margin-top: 40px;
+    background-color: #222;
+    color: #ddd;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+footer a {
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer .bi {
+    font-size: 1.5rem;
+}
+footer hr {
+    margin: 20px 0;
+}
+
+footer .gap-3 > li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+    footer .row > div {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    footer .gap-3 {
+        justify-content: center;
+    }
 }
