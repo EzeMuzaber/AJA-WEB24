@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desvinculaciones - Asociación Juvenil Araucana</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="comunicadosDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Novedades</a>
+                        <ul class="dropdown-menu" aria-labelledby="comunicadosDropdown">
+                            <li><a class="dropdown-item" href="comunicados.html">Comunicados</a></li>
+                            <li><a class="dropdown-item" href="incorporaciones.html">Incorporaciones</a></li>
+                            <li><a class="dropdown-item active" href="desvinculaciones.html">Desvinculaciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="sectores.html">Sectores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentos.html">Documentos</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
+                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                            <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+                            <li><a class="dropdown-item" href="cargar_cv.html">Cargar CV</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-danger text-white py-3">
+        <div class="container">
+            <h1 class="text-center">Desvinculaciones</h1>
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        <!-- Desvinculaciones -->
+        <section id="desvinculaciones-section" class="recent-section">
+            <h2 class="text-center text-danger mb-4">Desvinculaciones Recientes</h2>
+            <div class="row">
+                <!-- Primera persona -->
+                <div class="col-md-12 card-person" data-date="2024-11-10">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="../img/pexasejemplo3.jpg" alt="Pedro Martínez" class="rounded-photo">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Desvinculación: Pedro Martínez</h2>
+                            <p><strong>Sector:</strong> Logística</p>
+                            <p>Lamentamos informar la desvinculación de Pedro Martínez. Agradecemos su dedicación y
+                                compromiso durante su tiempo con nosotros. Le deseamos lo mejor en sus futuros proyectos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda persona -->
+                <div class="col-md-12 card-person" data-date="2024-11-28">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="../img/pexasejemplo.jpg" alt="Ana López" class="rounded-photo">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Desvinculación: Ana López</h2>
+                            <p><strong>Sector:</strong> Administración</p>
+                            <p>Lamentamos informar la desvinculación de Ana López. Su trabajo ha sido valioso para la
+                                organización, y le deseamos éxito en sus próximos desafíos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2024 Asociación Juvenil Araucana - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Seleccionar las tarjetas de desvinculaciones
+        const desvinculacionesSection = document.getElementById('desvinculaciones-section');
+        const today = new Date();
+
+        // Iterar por cada tarjeta y ocultarla si ha pasado más de 15 días
+        desvinculacionesSection.querySelectorAll('.card-person').forEach(person => {
+            const creationDate = new Date(person.dataset.date); // Fecha de desvinculación
+            const diffDays = Math.floor((today - creationDate) / (1000 * 60 * 60 * 24));
+
+            if (diffDays > 15) {
+                // Ocultar la tarjeta si han pasado más de 15 días
+                person.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

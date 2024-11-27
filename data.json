@@ -1,0 +1,22 @@
+{
+    "incorporaciones": [
+        {
+            "nombre": "Laura García",
+            "fecha": "2024-11-15",
+            "sector": "Administración",
+            "descripcion": "Laura se unirá al equipo de Administración para contribuir con su experiencia.",
+            "imagen": "../img/pexasejemplo.jpg",
+            "enlace": "incorporaciones.html"
+        }
+    ],
+    "desvinculaciones": [
+        {
+            "nombre": "Claudia Larad",
+            "fecha": "2024-11-29",
+            "sector": "Logística",
+            "descripcion": "Lamentamos informar la desvinculación de Pedro Martínez. Agradecemos su dedicación.",
+            "imagen": "../img/pexasejemplo3.jpg",
+            "enlace": "desvinculaciones.html"
+        }
+    ]
+}

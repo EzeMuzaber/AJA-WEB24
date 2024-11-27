@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicados - Asociación Juvenil Araucana</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- <li class="nav-item"><a class="nav-link active" href="comunicados.html">Comunicados</a></li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="comunicadosDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Novedades</a>
+                        <ul class="dropdown-menu" aria-labelledby="comunicadosDropdown">
+                            <li><a class="dropdown-item" href="comunicados.html">Comunicados</a></li>
+                            <li><a class="dropdown-item" href="incorporaciones.html">Incorporaciones</a></li>
+                            <li><a class="dropdown-item" href="desvinculaciones.html">Desvinculaciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="sectores.html">Sectores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documentos.html">Documentos</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Contacto</a>
+                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                            <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+                            <li><a class="dropdown-item" href="cargar_cv.html">Cargar CV</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="container mt-4">
+        <h1 class="text-center mb-4">Comunicados</h1>
+
+        <!-- Destacados -->
+        <div class="mb-5 p-4 bg-light border rounded" id="destacado">
+            <h3 class="text-primary">Destacado: Nuevo Circular</h3>
+            <p>A partir del 1 de diciembre de 2024, se implementarán nuevas normas de trabajo. <button
+                    class="btn btn-link p-0" onclick="verComunicadoPDF('../pages/docs/circular.pdf')">Ver más</button>
+            </p>
+        </div>
+
+        <!-- Barra de Búsqueda -->
+        <!-- <div class="mb-4">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar comunicados por palabras clave...">
+        </div> -->
+
+        <!-- Lista de Comunicados -->
+        <div id="comunicadosContainer" class="row g-3">
+            <div class="col-md-4 comunicado">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Bienvenida: Laura García</h5>
+                        <p class="card-text text-muted">Publicado el 20 de noviembre de 2024</p>
+                        <p class="card-text">Nos complace dar la bienvenida a Laura García al equipo de
+                            Administración...</p>
+                        <a href="incorporaciones.html#laura-garcia" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 comunicado">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Desvinculación: Pedro Martínez</h5>
+                        <p class="card-text text-muted">Publicado el 15 de noviembre de 2024</p>
+                        <p class="card-text">Lamentamos informar la desvinculación de Pedro Martínez del sector de
+                            Logística...</p>
+                        <a href="desvinculaciones.html#pedro-martinez" class="btn btn-primary">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal para Visor de PDF -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalLabel">Comunicado</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div id="pdfViewer" style="width: 100%; height: 600px; overflow: auto; background: #f0f0f0;"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2024 Asociación Juvenil Araucana - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
+
+    <script>
+        // Mostrar PDF en el modal
+        function verComunicadoPDF(pdfPath) {
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.innerHTML = ''; // Limpiar contenido previo
+
+            const loadingTask = pdfjsLib.getDocument(pdfPath);
+            loadingTask.promise.then(pdf => {
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                    pdf.getPage(pageNum).then(page => {
+                        const viewport = page.getViewport({ scale: 1.5 });
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        // Renderizar la página
+                        page.render({ canvasContext: context, viewport: viewport }).promise.then(() => {
+                            pdfViewer.appendChild(canvas);
+                        });
+                    });
+                }
+            }).catch(error => {
+                console.error('Error al cargar el PDF:', error);
+                pdfViewer.innerHTML = `<p>No se pudo cargar el documento. <a href="${pdfPath}" target="_blank">Abrir en una nueva ventana</a></p>`;
+            });
+
+            // Mostrar el modal
+            new bootstrap.Modal(document.getElementById('pdfModal')).show();
+        }
+
+
+        // Filtrar comunicados por fecha y búsqueda
+        document.addEventListener('DOMContentLoaded', function () {
+            const comunicados = document.querySelectorAll('.comunicado');
+            const today = new Date();
+
+            comunicados.forEach(comunicado => {
+                const dateAttr = comunicado.dataset.date;
+                const comunicadoDate = new Date(dateAttr);
+                const diffDays = Math.floor((today - comunicadoDate) / (1000 * 60 * 60 * 24));
+
+                // Ocultar comunicados que hayan pasado los 20 días
+                if (diffDays > 20) {
+                    comunicado.style.display = 'none';
+                }
+            });
+
+            // Filtrar por palabras clave
+            /* document.getElementById('searchInput').addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase();
+                comunicados.forEach(comunicado => {
+                    const title = comunicado.dataset.title.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        comunicado.style.display = 'block';
+                    } else {
+                        comunicado.style.display = 'none';
+                    }
+                });
+            }); */
+        });
+    </script>
+</body>
+
+</html>
