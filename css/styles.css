@@ -79,6 +79,16 @@ footer {
 }
 
 /* Documentos */
+#pdfViewer {
+    width: 100%;
+    height: 70vh; /* Altura fija */
+    overflow-y: auto; /* Habilitar scroll si es necesario */
+    background-color: #f0f0f0;
+    padding: 10px; /* Espaciado interno */
+}
+
+
+
 #destacado {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-left: 4px solid #007bff;
@@ -145,7 +155,15 @@ footer .gap-3 > li {
         margin-bottom: 20px;
         text-align: center;
     }
+    #pdfViewer {
+        height: 60vh; /* Reducir altura en dispositivos móviles */
+        padding: 5px; /* Menos espaciado para aprovechar el espacio */
+    }
 
+    canvas {
+        width: 100% !important; /* Escalar el canvas al 100% del contenedor */
+        height: auto !important; /* Mantener proporciones */
+    }
     footer .gap-3 {
         justify-content: center;
     }
