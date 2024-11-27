@@ -179,41 +179,43 @@
     <script>
         // Mostrar PDF en el modal
         function verComunicadoPDF(pdfPath) {
-            const pdfViewer = document.getElementById('pdfViewer');
-            pdfViewer.innerHTML = ''; // Limpiar contenido previo
+    const pdfViewer = document.getElementById('pdfViewer');
+    pdfViewer.innerHTML = ''; // Limpiar contenido previo
 
-            const scale = window.innerWidth < 768 ? 0.75 : 1.5; // Escalado dinámico
-            const loadingTask = pdfjsLib.getDocument(pdfPath);
+    const loadingTask = pdfjsLib.getDocument(pdfPath);
+    loadingTask.promise.then(pdf => {
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            pdf.getPage(pageNum).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
 
-            loadingTask.promise.then(pdf => {
-                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                    pdf.getPage(pageNum).then(page => {
-                        const viewport = page.getViewport({ scale: scale });
-                        const canvas = document.createElement('canvas');
-                        const context = canvas.getContext('2d');
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
+                const outputScale = window.devicePixelRatio || 1;
 
-                        // Renderizar la página
-                        page.render({
-                            canvasContext: context,
-                            viewport: viewport
-                        }).promise.then(() => {
-                            pdfViewer.appendChild(canvas);
+                canvas.width = Math.floor(viewport.width * outputScale);
+                canvas.height = Math.floor(viewport.height * outputScale);
+                canvas.style.width = `${viewport.width}px`;
+                canvas.style.height = `${viewport.height}px`;
 
-                            // Habilitar enlaces externos en el visor
-                            pdfjsLib.GlobalWorkerOptions.externalLinkTarget = pdfjsLib.LinkTarget.BLANK;
-                        });
-                    });
-                }
-            }).catch(error => {
-                console.error('Error al cargar el PDF:', error);
-                pdfViewer.innerHTML = `<p>No se pudo cargar el documento. <a href="${pdfPath}" target="_blank">Abrir en una nueva ventana</a></p>`;
+                context.scale(outputScale, outputScale);
+
+                page.render({
+                    canvasContext: context,
+                    viewport: viewport
+                }).promise.then(() => {
+                    pdfViewer.appendChild(canvas);
+                });
             });
-
-            // Mostrar el modal
-            new bootstrap.Modal(document.getElementById('pdfModal')).show();
         }
+    }).catch(error => {
+        console.error('Error al cargar el PDF:', error);
+        pdfViewer.innerHTML = `<p>No se pudo cargar el documento. <a href="${pdfPath}" target="_blank">Abrir en una nueva ventana</a></p>`;
+    });
+
+    // Mostrar el modal
+    new bootstrap.Modal(document.getElementById('pdfModal')).show();
+}
+
 
 
         // Filtrar comunicados por fecha y búsqueda
