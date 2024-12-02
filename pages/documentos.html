@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="../index.html">Inicio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="comunicadosDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Novedades</a>
+                            data-bs-toggle="dropdown" aria-expanded="false">Secciones</a>
                         <ul class="dropdown-menu" aria-labelledby="comunicadosDropdown">
+                            <li><a class="dropdown-item" href="novedades.html">Novedades</a></li>
                             <li><a class="dropdown-item" href="comunicados.html">Comunicados</a></li>
                             <li><a class="dropdown-item" href="incorporaciones.html">Incorporaciones</a></li>
                             <li><a class="dropdown-item" href="desvinculaciones.html">Desvinculaciones</a></li>
@@ -45,10 +49,10 @@
     <main class="container mt-5">
         <h1 class="text-center mb-4">Documentos</h1>
 
-        <!-- Destacado -->
+        <!-- Destacados -->
         <section id="destacados" class="mb-5">
             <h2 class="text-primary">Destacados</h2>
-            <div class="row g-4" id="destacadosContainer">
+            <div id="destacadosContainer" class="list-group">
                 <!-- Los destacados se agregarán aquí automáticamente -->
             </div>
         </section>
@@ -56,23 +60,20 @@
         <!-- Últimos Archivos -->
         <section id="ultimos-documentos">
             <h2 class="text-muted mb-4">Últimos Archivos</h2>
-            <div class="row g-4" id="ultimosContainer">
+            <div id="ultimosContainer" class="list-group">
                 <!-- Se agregarán documentos automáticamente aquí -->
-            </div>
-        </section>
-
             </div>
         </section>
     </main>
 
     <footer class="bg-dark text-white py-4">
         <div class="container">
-            <!-- Enlaces rápidos -->
             <div class="row text-center">
                 <div class="col-md-6 mb-3">
                     <h5>Enlaces Rápidos</h5>
                     <ul class="list-unstyled">
                         <li><a href="../index.html" class="text-white text-decoration-none">Inicio</a></li>
+                        <li><a href="novedades.html" class="text-white text-decoration-none">Novedades</a></li>
                         <li><a href="comunicados.html" class="text-white text-decoration-none">Comunicados</a></li>
                         <li><a href="incorporaciones.html" class="text-white text-decoration-none">Incorporaciones</a></li>
                         <li><a href="desvinculaciones.html" class="text-white text-decoration-none">Desvinculaciones</a></li>
@@ -82,21 +83,24 @@
                         <li><a href="cargaCV.html" class="text-white text-decoration-none">Cargar CV</a></li>
                     </ul>
                 </div>
-    
                 <!-- Información de Contacto -->
                 <div class="col-md-6 mb-3">
                     <h5>Contactos</h5>
                     <ul class="list-unstyled">
-                        <li><strong>RRHH:</strong> <a href="mailto:rrhh@aja.com" class="text-white text-decoration-none">rrhh@aja.com</a></li>
-                        <li><strong>WPP Ausencias:</strong> <a href="tel:111111111" class="text-white text-decoration-none">111111111</a></li>
-                        <li><strong>Teléfono Principal:</strong> <a href="tel:222222222" class="text-white text-decoration-none">222222222</a></li>
-                        <li><strong>Teléfono Proovedores:</strong> <a href="tel:222222222" class="text-white text-decoration-none">222222222</a></li>
-                        <li><strong>Teléfono Pedidos:</strong> <a href="tel:222222222" class="text-white text-decoration-none">222222222</a></li>
+                        <li><strong>RRHH:</strong> <a href="mailto:rrhh@aja.com"
+                                class="text-white text-decoration-none">recursos.humanos@ajaweb.com</a></li>
+                        <li><strong>wpp Principal:</strong> <a href="tel:222222222"
+                                class="text-white text-decoration-none">11 3485-6587</a></li>
+                        <li><strong>Teléfono Pedidos:</strong> <a href="tel:222222222"
+                                class="text-white text-decoration-none">11 3878-9419</a></li>
+                        <li><strong>Teléfono Principal Linea:</strong> <a href="tel:222222222"
+                                class="text-white text-decoration-none">4918-3271/9337 - 4919-8415 (interno: 202/201)</a></li>
+
 
                         <li><strong>Horario de Atención:</strong> Lunes a Viernes, 9:00 AM - 18:00 PM</li>
                     </ul>
                 </div>
-    
+
                 <!-- Redes Sociales -->
                 <!-- <div class="col-md-4 mb-3">
                     <h5>Síguenos</h5>
@@ -107,91 +111,69 @@
                     </ul>
                 </div> -->
             </div>
-    
+
             <!-- Línea Divisoria -->
             <hr class="bg-light">
-    
             <!-- Pie de Página -->
             <div class="text-center">
-                <p>© 2024 Ezequiel Muzaber - Asociación Juvenil Araucana - Todos los derechos reservados</p>
+                <p>© 2024 Asociación Juvenil Araucana -E.A.Muzaber -Todos los derechos reservados</p>
             </div>
-        </div>
     </footer>
-    
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      // Referencias a los contenedores
         const destacadosContainer = document.getElementById('destacadosContainer');
         const ultimosContainer = document.getElementById('ultimosContainer');
 
-
-        // Documentos con fechas de creación
         const documentos = [
-            {
-                titulo: "Reglamento General de Trabajo AJA 24",
-                fecha: "2024-11-28",
-                enlace: "https://drive.google.com/file/d/1RlgyTGiww4tDFnR995hY4J45TLwMocJm/view?usp=sharing",
-                descripcion: "Última actualización: noviembre 2024",
-                destacadoPorDias: 7
-            },
-            /* {
-                titulo: "Regabajo AJA 24",
-                fecha: "2024-11-27",
-                enlace: "https://drive.google.com/file/d/1RlgyTGiww4tDFnR995hY4J45TLwMocJm/view?usp=sharing",
-                descripcion: "Última actualización: noviembre 2024",
-                destacadoPorDias: 1
-            }, */
-            /* {
-                titulo: "Guía de Procedimientos Internos",
-                fecha: "2024-11-26",
-                enlace: "https://drive.google.com",
-                descripcion: "Última actualización: octubre 2024",
-                destacadoPorDias: 3
-            } */
+            { titulo: "Reglamento General de Trabajo AJA 24",
+            fecha: "2024-11-28", 
+            enlace: "https://drive.google.com/file/d/1RlgyTGiww4tDFnR995hY4J45TLwMocJm/view?usp=sharing", 
+            descripcion: "Última actualización: noviembre 2024", 
+            destacadoPorDias: 15 },
+            { titulo: "Guía de Procedimientos Internos", 
+            fecha: "2024-11-20", 
+            enlace: "https://drive.google.com", 
+            descripcion: "Actualización: octubre 2024", 
+            destacadoPorDias: 30 },
+             { titulo: "Guía de Procedimientos Internos", 
+            fecha: "2024-11-20", 
+            enlace: "https://drive.google.com", 
+            descripcion: "Actualización: octubre 2024", 
+            destacadoPorDias: 30 },
+             { titulo: "Guía de Procedimientos Internos", fecha: "2024-11-20", enlace: "https://drive.google.com", 
+            descripcion: "Actualización: octubre 2024", destacadoPorDias: 3 } 
         ];
 
-        // Función para mover un documento de Destacado a Últimos Archivos
         function actualizarDocumentos() {
             const today = new Date();
 
-              documentos.forEach(doc => {
+            documentos.forEach(doc => {
                 const docFecha = new Date(doc.fecha);
                 const diffDays = Math.floor((today - docFecha) / (1000 * 60 * 60 * 24));
 
-                // Si aún está en el período de destacados
+                const itemHTML = `
+                    <a href="${doc.enlace}" target="_blank" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5>${doc.titulo}</h5>
+                            <p class="text-muted">${doc.descripcion}</p>
+                        </div>
+                        <span class="badge bg-primary rounded-pill">Ver</span>
+                    </a>
+                `;
+
                 if (diffDays <= doc.destacadoPorDias) {
-                    destacadosContainer.innerHTML += `
-                        <div class="col-md-4">
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title">${doc.titulo}</h5>
-                                    <p class="card-text text-muted">${doc.descripcion}</p>
-                                    <a href="${doc.enlace}" target="_blank" class="btn btn-primary btn-sm">Abrir en Drive</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
+                    destacadosContainer.innerHTML += itemHTML;
                 } else {
-                    // Mover a últimos archivos
-                    ultimosContainer.innerHTML += `
-                        <div class="col-md-4">
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title">${doc.titulo}</h5>
-                                    <p class="card-text text-muted">${doc.descripcion}</p>
-                                    <a href="${doc.enlace}" target="_blank" class="btn btn-outline-secondary btn-sm">Abrir en Drive</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
+                    ultimosContainer.innerHTML += itemHTML;
                 }
             });
         }
 
-        // Ejecutar al cargar la página
         document.addEventListener('DOMContentLoaded', actualizarDocumentos);
     </script>
 </body>
+
 </html>

@@ -23,8 +23,9 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="comunicadosDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Novedades</a>
+                            data-bs-toggle="dropdown" aria-expanded="false">Secciones</a>
                         <ul class="dropdown-menu" aria-labelledby="comunicadosDropdown">
+                            <li><a class="dropdown-item" href="novedades.html">Novedades</a></li>
                             <li><a class="dropdown-item" href="comunicados.html">Comunicados</a></li>
                             <li><a class="dropdown-item" href="incorporaciones.html">Incorporaciones</a></li>
                             <li><a class="dropdown-item" href="desvinculaciones.html">Desvinculaciones</a></li>
@@ -51,9 +52,9 @@
 
         <!-- Pestañas de Sectores -->
         <ul class="nav nav-tabs" id="sectorTabs" role="tablist">
-            <li class="nav-item">
-                <button class="nav-link active" id="limpieza-tab" data-bs-toggle="tab" data-bs-target="#limpieza"
-                    type="button" role="tab" aria-controls="limpieza" aria-selected="true">Limpieza</button>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="directores-tab" data-bs-toggle="tab" data-bs-target="#directores"
+                    type="button" role="tab" aria-controls="directores" aria-selected="false">Comision Directiva</button>
             </li>
             <li class="nav-item">
                 <button class="nav-link" id="administracion-tab" data-bs-toggle="tab" data-bs-target="#administracion"
@@ -61,29 +62,39 @@
                     aria-selected="false">Administración</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="seguridad-tab" data-bs-toggle="tab" data-bs-target="#seguridad"
-                    type="button" role="tab" aria-controls="seguridad" aria-selected="false">Seguridad</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="enfermeros-tab" data-bs-toggle="tab" data-bs-target="#enfermeros"
-                    type="button" role="tab" aria-controls="enfermeros" aria-selected="false">Enfermeros</button>
-            </li>
-            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="medicos-tab" data-bs-toggle="tab" data-bs-target="#medicos" type="button"
-                    role="tab" aria-controls="medicos" aria-selected="false">Médicos</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="cocineros-tab" data-bs-toggle="tab" data-bs-target="#cocineros"
-                    type="button" role="tab" aria-controls="cocineros" aria-selected="false">Cocineros</button>
+                    role="tab" aria-controls="medicos" aria-selected="false">Gabinete</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="profesores-tab" data-bs-toggle="tab" data-bs-target="#profesores"
-                    type="button" role="tab" aria-controls="profesores" aria-selected="false">Profesores</button>
+                    type="button" role="tab" aria-controls="profesores" aria-selected="false">Recursos Humanos</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="directores-tab" data-bs-toggle="tab" data-bs-target="#directores"
-                    type="button" role="tab" aria-controls="directores" aria-selected="false">Directores</button>
+                <button class="nav-link" id="profesores-tab" data-bs-toggle="tab" data-bs-target="#profesores"
+                    type="button" role="tab" aria-controls="profesores" aria-selected="false">Orientadores</button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="enfermeros-tab" data-bs-toggle="tab" data-bs-target="#enfermeros"
+                    type="button" role="tab" aria-controls="enfermeros" aria-selected="false">Auxiliares</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="cocineros-tab" data-bs-toggle="tab" data-bs-target="#cocineros"
+                    type="button" role="tab" aria-controls="cocineros" aria-selected="false">Cocina</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link active" id="limpieza-tab" data-bs-toggle="tab" data-bs-target="#limpieza"
+                    type="button" role="tab" aria-controls="limpieza" aria-selected="true">Limpieza</button>
+            </li>
+            
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="seguridad-tab" data-bs-toggle="tab" data-bs-target="#seguridad"
+                    type="button" role="tab" aria-controls="seguridad" aria-selected="false">Vigilancia</button>
+            </li>
+            
+            
+            
+            
+           
             <!-- Agrega más sectores aquí -->
         </ul>
 
@@ -209,9 +220,9 @@
                     </tbody>
                 </table>
             </div>
-            <!-- SEGURIDAD -->
+            <!-- VIGILANCIA -->
             <div class="tab-pane fade" id="seguridad" role="tabpanel" aria-labelledby="seguridad-tab">
-                <h3>Seguridad</h3>
+                <h3>Vigilancia</h3>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -241,9 +252,9 @@
                 </table>
             </div>
 
-            <!-- ENFERMEROS -->
+            <!-- ENFERMEROS/ AUXILIARES -->
             <div class="tab-pane fade" id="enfermeros" role="tabpanel" aria-labelledby="enfermeros-tab">
-                <h3>Enfermeros</h3>
+                <h3>Auxiliares</h3>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -273,9 +284,9 @@
                 </table>
             </div>
 
-            <!-- MEDICOS -->
+            <!-- MEDICOS / GABINETE-->
             <div class="tab-pane fade" id="medicos" role="tabpanel" aria-labelledby="medicos-tab">
-                <h3>Medicos</h3>
+                <h3>Gabinete</h3>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -305,9 +316,9 @@
                 </table>
             </div>
 
-            <!-- COCINEROS -->
+            <!-- COCINA -->
             <div class="tab-pane fade" id="cocineros" role="tabpanel" aria-labelledby="cocineros-tab">
-                <h3>Cocineros</h3>
+                <h3>Cocina</h3>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -337,9 +348,9 @@
                 </table>
             </div>
 
-            <!-- PROFESORES -->
+            <!-- PROFESORES/ ORIENTADORES-->
             <div class="tab-pane fade" id="profesores" role="tabpanel" aria-labelledby="profesores-tab">
-                <h3>Profesores</h3>
+                <h3>Orientadores</h3>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -371,7 +382,7 @@
 
             <!-- DIRECTORES -->
             <div class="tab-pane fade" id="directores" role="tabpanel" aria-labelledby="directores-tab">
-                <h3>Directores</h3>
+                <h3>Comision Directiva</h3>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -383,17 +394,17 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Juan Pérez</td>
-                            <td>Rotativo</td>
-                            <td>20 al 25 de diciembre</td>
+                            <td>En Proceso</td>
+                            <td>En proceso</td>
+                            <td>En proceso</td>
                             <td>
-                                <button class="btn btn-primary btn-sm view-schedule" data-name="Juan Pérez"
+                                <!-- <button class="btn btn-primary btn-sm view-schedule" data-name="Juan Pérez"
                                     data-schedule='[
                                     {"title": "Turno Noche", "start": "2024-11-27T22:00:00", "end": "2024-11-28T06:00:00"}
                                 ]'>Ver Horario</button>
                                 <button class="btn btn-warning btn-sm view-vacation" data-vacation='[
                                     {"title": "Vacaciones Juan Pérez", "start": "2024-12-20", "end": "2024-12-25"}
-                                ]'>Ver Vacaciones</button>
+                                ]'>Ver Vacaciones</button> -->
                             </td>
                         </tr>
                         <!-- Más empleados aquí -->
@@ -431,6 +442,7 @@
                     <h5>Enlaces Rápidos</h5>
                     <ul class="list-unstyled">
                         <li><a href="../index.html" class="text-white text-decoration-none">Inicio</a></li>
+                        <li><a href="novedades.html" class="text-white text-decoration-none">Novedades</a></li>
                         <li><a href="comunicados.html" class="text-white text-decoration-none">Comunicados</a></li>
                         <li><a href="incorporaciones.html" class="text-white text-decoration-none">Incorporaciones</a></li>
                         <li><a href="desvinculaciones.html" class="text-white text-decoration-none">Desvinculaciones</a></li>
@@ -445,16 +457,20 @@
                 <div class="col-md-6 mb-3">
                     <h5>Contactos</h5>
                     <ul class="list-unstyled">
-                        <li><strong>RRHH:</strong> <a href="mailto:rrhh@aja.com" class="text-white text-decoration-none">rrhh@aja.com</a></li>
-                        <li><strong>WPP Ausencias:</strong> <a href="tel:111111111" class="text-white text-decoration-none">111111111</a></li>
-                        <li><strong>Teléfono Principal:</strong> <a href="tel:222222222" class="text-white text-decoration-none">11 3485-6587</a></li>
-                        <li><strong>Teléfono Proovedores:</strong> <a href="tel:222222222" class="text-white text-decoration-none">11 2496-8870</a></li>
-                        <li><strong>Teléfono Pedidos:</strong> <a href="tel:222222222" class="text-white text-decoration-none">11 3878-9419</a></li>
+                        <li><strong>RRHH:</strong> <a href="mailto:rrhh@aja.com"
+                                class="text-white text-decoration-none">recursos.humanos@ajaweb.com</a></li>
+                        <li><strong>wpp Principal:</strong> <a href="tel:222222222"
+                                class="text-white text-decoration-none">11 3485-6587</a></li>
+                        <li><strong>Teléfono Pedidos:</strong> <a href="tel:222222222"
+                                class="text-white text-decoration-none">11 3878-9419</a></li>
+                        <li><strong>Teléfono Principal Linea:</strong> <a href="tel:222222222"
+                                class="text-white text-decoration-none">4918-3271/9337 - 4919-8415 (interno: 202/201)</a></li>
+
 
                         <li><strong>Horario de Atención:</strong> Lunes a Viernes, 9:00 AM - 18:00 PM</li>
                     </ul>
                 </div>
-    
+
                 <!-- Redes Sociales -->
                 <!-- <div class="col-md-4 mb-3">
                     <h5>Síguenos</h5>
@@ -465,13 +481,12 @@
                     </ul>
                 </div> -->
             </div>
-    
+
             <!-- Línea Divisoria -->
             <hr class="bg-light">
-    
             <!-- Pie de Página -->
             <div class="text-center">
-                <p>© 2024 Ezequiel Muzaber - Asociación Juvenil Araucana - Todos los derechos reservados</p>
+                <p>© 2024 Asociación Juvenil Araucana -E.A.Muzaber -Todos los derechos reservados</p>
             </div>
         </div>
     </footer>

@@ -94,6 +94,27 @@ footer {
     border-left: 4px solid #007bff;
 }
 
+.list-group-item {
+    padding: 5px 5px; /* Reducir padding */
+    margin: 5px;
+    border-radius: 25px;
+    border-bottom: 4px solid #ddd; /* Separador limpio */
+    font-size: 0.95rem; /* Texto más compacto */
+}
+.list-group-item:hover {
+    background-color: #f8f9fa; /* Fondo claro al pasar el cursor */
+    text-decoration: underline; /* Efecto de enlace al hover */
+}
+.list-group-item a {
+    text-decoration: none; /* Sin subrayado */
+    color: #007bff; /* Color de enlace estándar */
+}
+.list-group-item a:hover {
+    text-decoration: underline; /* Subrayado al hover */
+}
+
+
+
 /* Últimos Archivos */
 #ultimos-documentos .card {
     border: none;
