@@ -49,6 +49,8 @@
     <!-- Contenido Principal -->
     <main class="container mt-4">
         <h1 class="text-center mb-4">Sectores</h1>
+        <!-- Contenedor para la fecha y hora -->
+        <p class="text-center" id="currentDateTime" style="font-size: 1rem;"></p>
 
         <!-- Pestañas de Sectores -->
         <ul class="nav nav-tabs" id="sectorTabs" role="tablist">
@@ -520,6 +522,22 @@
         new bootstrap.Modal(document.getElementById('calendarModal')).show();
     });
 });
+
+function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const formattedDate = now.toLocaleDateString('es-ES', options);
+
+            // Actualiza el contenido del elemento
+            document.getElementById('currentDateTime').innerText = formattedDate;
+        }
+
+        // Actualiza la fecha y hora al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDateTime();
+            // Actualiza la fecha y hora cada segundo
+            setInterval(updateDateTime, 1000);
+        });
 
     </script>
 </body>

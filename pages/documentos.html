@@ -48,6 +48,8 @@
     <!-- Contenido Principal -->
     <main class="container mt-5">
         <h1 class="text-center mb-4">Documentos</h1>
+        <!-- Contenedor para la fecha y hora -->
+        <p class="text-center" id="currentDateTime" style="font-size: 1rem;"></p>
 
         <!-- Destacados -->
         <section id="destacados" class="mb-5">
@@ -75,8 +77,10 @@
                         <li><a href="../index.html" class="text-white text-decoration-none">Inicio</a></li>
                         <li><a href="novedades.html" class="text-white text-decoration-none">Novedades</a></li>
                         <li><a href="comunicados.html" class="text-white text-decoration-none">Comunicados</a></li>
-                        <li><a href="incorporaciones.html" class="text-white text-decoration-none">Incorporaciones</a></li>
-                        <li><a href="desvinculaciones.html" class="text-white text-decoration-none">Desvinculaciones</a></li>
+                        <li><a href="incorporaciones.html" class="text-white text-decoration-none">Incorporaciones</a>
+                        </li>
+                        <li><a href="desvinculaciones.html" class="text-white text-decoration-none">Desvinculaciones</a>
+                        </li>
                         <li><a href="sectores.html" class="text-white text-decoration-none">Sectores</a></li>
                         <li><a href="documentos.html" class="text-white text-decoration-none">Documentos</a></li>
                         <li><a href="contacto.html" class="text-white text-decoration-none">Contacto</a></li>
@@ -94,7 +98,8 @@
                         <li><strong>Teléfono Pedidos:</strong> <a href="tel:222222222"
                                 class="text-white text-decoration-none">11 3878-9419</a></li>
                         <li><strong>Teléfono Principal Linea:</strong> <a href="tel:222222222"
-                                class="text-white text-decoration-none">4918-3271/9337 - 4919-8415 (interno: 202/201)</a></li>
+                                class="text-white text-decoration-none">4918-3271/9337 - 4919-8415 (interno:
+                                202/201)</a></li>
 
 
                         <li><strong>Horario de Atención:</strong> Lunes a Viernes, 9:00 AM - 18:00 PM</li>
@@ -128,11 +133,13 @@
         const ultimosContainer = document.getElementById('ultimosContainer');
 
         const documentos = [
-            { titulo: "Reglamento General de Trabajo AJA 24",
-            fecha: "2024-11-28", 
-            enlace: "https://drive.google.com/file/d/1RlgyTGiww4tDFnR995hY4J45TLwMocJm/view?usp=sharing", 
-            descripcion: "Última actualización: noviembre 2024", 
-            destacadoPorDias: 15 }
+            {
+                titulo: "Reglamento General de Trabajo AJA 24",
+                fecha: "2024-11-28",
+                enlace: "https://drive.google.com/file/d/1RlgyTGiww4tDFnR995hY4J45TLwMocJm/view?usp=sharing",
+                descripcion: "Última actualización: noviembre 2024",
+                destacadoPorDias: 15
+            }
             /* { titulo: "Guía de Procedimientos Internos", 
             fecha: "2024-11-20", 
             enlace: "https://drive.google.com", 
@@ -173,6 +180,22 @@
         }
 
         document.addEventListener('DOMContentLoaded', actualizarDocumentos);
+
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const formattedDate = now.toLocaleDateString('es-ES', options);
+
+            // Actualiza el contenido del elemento
+            document.getElementById('currentDateTime').innerText = formattedDate;
+        }
+
+        // Actualiza la fecha y hora al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDateTime();
+            // Actualiza la fecha y hora cada segundo
+            setInterval(updateDateTime, 1000);
+        });
     </script>
 </body>
 
